@@ -30,3 +30,7 @@
 *.exe
 *.out
 *.app
+
+./StrategyPattern/cmake-build-debug/
+./StrategyPattern/cmake-build-debug/*
+./StrategyPattern/cmake-build-debug/**
