@@ -34,3 +34,10 @@
 ./StrategyPattern/cmake-build-debug/
 ./StrategyPattern/cmake-build-debug/*
 ./StrategyPattern/cmake-build-debug/**
+./StrategyPattern/.idea/
+
+
+./ObserverPattern/cmake-build-debug/
+./ObserverPattern/cmake-build-debug/*
+./ObserverPattern/cmake-build-debug/**
+./ObserverPattern/.idea/
