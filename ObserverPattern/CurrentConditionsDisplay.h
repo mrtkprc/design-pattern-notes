@@ -1,14 +1,15 @@
 #pragma once
 
 #include <memory>
-#include "DisplayElement.h"
-#include "Observer.h"
-#include "Subject.h"
+#include "IDisplayElement.h"
+#include "IObserver.h"
+#include "ISubject.h"
 
-class CurrentConditionsDisplay : public std::enable_shared_from_this<CurrentConditionsDisplay>, public Observer, public DisplayElement{
+class CurrentConditionsDisplay : public IObserver, public IDisplayElement{
     SubjectPtr m_weatherData;
     double temperature;
     double humidity;
+
 public:
     explicit CurrentConditionsDisplay(SubjectPtr weatherData);
     void update(double temperature, double humidity, double pressure);

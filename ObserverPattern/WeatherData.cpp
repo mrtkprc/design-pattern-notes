@@ -13,7 +13,7 @@ void WeatherData::removeObserver(ObserverPtr o)
 
     if(iterator != observers.end())
     {
-        std::cout << "Observer is deleted." << std::endl;
+        std::cout << "IObserver is deleted." << std::endl;
         observers.erase(iterator);
     }
 

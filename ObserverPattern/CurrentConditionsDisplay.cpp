@@ -2,12 +2,13 @@
 #include "CurrentConditionsDisplay.h"
 
 //constructor
+
 CurrentConditionsDisplay::CurrentConditionsDisplay(SubjectPtr weatherData) :
     temperature(0),
     humidity(0),
     m_weatherData(weatherData)
 {
-    m_weatherData->registerObserver(shared_from_this());
+    m_weatherData->registerObserver(/*.....this*/);
 }
 
 void CurrentConditionsDisplay::update(double temperature, double humidity, double pressure)

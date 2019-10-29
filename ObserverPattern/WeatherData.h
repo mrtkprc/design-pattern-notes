@@ -3,9 +3,9 @@
 #include <vector>
 #include <memory>
 
-#include "Subject.h"
+#include "ISubject.h"
 
-class WeatherData : public Subject{
+class WeatherData : public ISubject{
     std::vector<ObserverPtr> observers;
     double temperature;
     double humidity;

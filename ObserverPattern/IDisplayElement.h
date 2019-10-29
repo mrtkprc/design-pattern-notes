@@ -2,9 +2,9 @@
 
 #include <bits/shared_ptr.h>
 
-class DisplayElement{
+class IDisplayElement{
 public:
     virtual void display() = 0;
 };
 
-using DisplayElementPtr = std::shared_ptr<DisplayElement>;
+using DisplayElementPtr = std::shared_ptr<IDisplayElement>;
