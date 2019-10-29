@@ -6,12 +6,13 @@
 #include "Subject.h"
 
 class WeatherData : public Subject{
-    std::shared_ptr<std::vector<Observer>> observers;
+    std::vector<ObserverPtr> observers;
     double temperature;
     double humidity;
     double pressure;
 
 public:
+    WeatherData();
     void registerObserver(ObserverPtr o) override;
     void removeObserver(ObserverPtr o) override;
     void notifyObservers() override;

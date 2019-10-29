@@ -5,14 +5,14 @@
 #include "Observer.h"
 #include "Subject.h"
 
-class CurrentConditionsDisplay : public Observer, public DisplayElement{
+class CurrentConditionsDisplay : public std::enable_shared_from_this<CurrentConditionsDisplay>, public Observer, public DisplayElement{
     SubjectPtr m_weatherData;
     double temperature;
     double humidity;
 public:
-    CurrentConditionsDisplay(Subject weatherData);
+    explicit CurrentConditionsDisplay(SubjectPtr weatherData);
     void update(double temperature, double humidity, double pressure);
-
+    void display();
 
 };
 
