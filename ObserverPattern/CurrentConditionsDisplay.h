@@ -6,14 +6,15 @@
 #include "ISubject.h"
 
 class CurrentConditionsDisplay : public IObserver, public IDisplayElement{
-    SubjectPtr m_weatherData;
-    double temperature;
-    double humidity;
+    ISubject *m_weatherData;
+    double m_temperature;
+    double m_humidity;
+    double m_pressure;
 
 public:
-    explicit CurrentConditionsDisplay(SubjectPtr weatherData);
-    void update(double temperature, double humidity, double pressure);
-    void display();
+    explicit CurrentConditionsDisplay(ISubject *weatherData);
+    void update(double temperature, double humidity, double pressure) override ;
+    void display() override ;
 
 };
 

@@ -3,22 +3,25 @@
 
 //constructor
 
-CurrentConditionsDisplay::CurrentConditionsDisplay(SubjectPtr weatherData) :
-    temperature(0),
-    humidity(0),
+CurrentConditionsDisplay::CurrentConditionsDisplay(ISubject *weatherData) :
+    m_temperature(0),
+    m_humidity(0),
+    m_pressure(0),
     m_weatherData(weatherData)
 {
-    m_weatherData->registerObserver(/*.....this*/);
+    m_weatherData->registerObserver(this);
 }
 
 void CurrentConditionsDisplay::update(double temperature, double humidity, double pressure)
 {
-    this->temperature = temperature;
-    this->humidity = humidity;
+    std::cout << "CurrentConditionsDisplay::update" << std::endl;
+    this->m_temperature = temperature;
+    this->m_humidity = humidity;
+    this->m_pressure = pressure;
     display();
 }
 
 void CurrentConditionsDisplay::display()
 {
-    std::cout << "Current Conditions: "<< temperature << "C degrees and " << humidity <<"% humidity"<<std::endl;
+    std::cout << "CurrentConditionsDisplay::display - Temp: "<< m_temperature << "C degrees, Humidity:  " << m_humidity <<"% and Pressure: "<< m_pressure <<std::endl;
 }

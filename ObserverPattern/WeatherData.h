@@ -6,15 +6,15 @@
 #include "ISubject.h"
 
 class WeatherData : public ISubject{
-    std::vector<ObserverPtr> observers;
-    double temperature;
-    double humidity;
-    double pressure;
+    std::vector<IObserver*> observers;
+    double m_temperature;
+    double m_humidity;
+    double m_pressure;
 
 public:
     WeatherData();
-    void registerObserver(ObserverPtr o) override;
-    void removeObserver(ObserverPtr o) override;
+    void registerObserver(IObserver *o) override;
+    void removeObserver(IObserver *o) override;
     void notifyObservers() override;
 
     void measurementsChanged();

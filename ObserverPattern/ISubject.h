@@ -5,8 +5,8 @@
 
 class ISubject{
 public:
-    virtual void registerObserver(ObserverPtr o) = 0;
-    virtual void removeObserver(ObserverPtr o) = 0;
+    virtual void registerObserver(IObserver *o) = 0;
+    virtual void removeObserver(IObserver *o) = 0;
     virtual void notifyObservers() = 0;
 };
 using SubjectPtr = std::shared_ptr<ISubject>;
