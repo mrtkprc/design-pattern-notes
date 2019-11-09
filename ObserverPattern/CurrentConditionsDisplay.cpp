@@ -23,5 +23,5 @@ void CurrentConditionsDisplay::update(double temperature, double humidity, doubl
 
 void CurrentConditionsDisplay::display()
 {
-    std::cout << "CurrentConditionsDisplay::display - Temp: "<< m_temperature << "C degrees, Humidity:  " << m_humidity <<"% and Pressure: "<< m_pressure <<std::endl;
+    std::cout << "CurrentConditionsDisplay::display - Temp: "<< m_temperature << "C degrees, Humidity: " << m_humidity <<"% and Pressure: "<< m_pressure <<std::endl;
 }

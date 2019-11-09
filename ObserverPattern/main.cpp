@@ -10,7 +10,11 @@ int main() {
 
     std::cout << "Measurements are changing..." << std::endl;
 
-    weatherData->setMeasurements(100,99,300);
+    weatherData->setMeasurements(50,60,70);
+
+    std::cout << std::endl << std::endl <<"WeatherData Information:" << std::endl;
+
+    currentDisplay->display();
 
     return 0;
 }
