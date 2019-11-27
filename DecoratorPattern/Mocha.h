@@ -3,9 +3,10 @@
 
 
 class Mocha : public CondimentDecorator{
-    Beverage m_beverage;
+    BeveragePtr m_beverage;
 public:
-    Mocha();
-    
+    Mocha(BeveragePtr beverage);
+    virtual string getDescription() override;
+    double cost();
 
 };
