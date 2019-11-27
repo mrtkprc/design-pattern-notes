@@ -1,11 +1,13 @@
 #pragma once
 #include <iostream>
-
+#include <string>
+#include <memory>
 
 class Beverage {
+protected:
     std::string m_description = "Unknown Beverage";
 public:
-    std::string getDescription();
+    virtual std::string getDescription();
     virtual double cost() = 0;
 };
 

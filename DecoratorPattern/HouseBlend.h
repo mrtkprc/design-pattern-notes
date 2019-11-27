@@ -5,4 +5,6 @@
 class HouseBlend : public Beverage{
 public:
     HouseBlend();
+    virtual ~HouseBlend() = default;
+    double cost() override;
 };

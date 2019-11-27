@@ -4,7 +4,8 @@ Mocha::Mocha(BeveragePtr beverage)
 {
     m_beverage = beverage;
 }
-string Mocha::getDescription()
+
+std::string Mocha::getDescription()
 {
     return m_beverage->getDescription() +", Mocha";
 }
