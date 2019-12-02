@@ -7,18 +7,16 @@
 #include "HouseBlend.h"
 #include "Mocha.h"
 
-using namespace std;
+
 int main() 
 {
-
-      BeveragePtr beverage = make_shared<Espresso>();
+      BeveragePtr beverage = std::make_shared<Espresso>();
       std::cout << beverage->getDescription()+ " $" + std::to_string(beverage->cost());
-        /*
-        BeveragePtr beverage2 = make_shared<HouseBlend>();
-        beverage2 = make_shared<Mocha>(beverage2);
-        beverage2 = make_shared<Mocha>(beverage2);
 
-        std::cout << beverage2->getDescription()+ " $" + std::to_string(beverage2->cost());
-        */
+      BeveragePtr beverage2 = std::make_shared<HouseBlend>();
 
+      beverage2 = std::make_shared<Mocha>(beverage2);
+      beverage2 = std::make_shared<Mocha>(beverage2);
+
+      std::cout << std::endl << beverage2->getDescription()+ " $" + std::to_string(beverage2->cost());
 }
