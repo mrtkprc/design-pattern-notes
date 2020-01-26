@@ -39,7 +39,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="src\Ducks\DuckCall.cs" />
+    <Compile Include="src\Ducks\Goose.cs" />
+    <Compile Include="src\Ducks\GooseAdapter.cs" />
+    <Compile Include="src\Ducks\MallardDuck.cs" />
+    <Compile Include="src\Ducks\RedheadDuck.cs" />
+    <Compile Include="src\Ducks\RubberDuck.cs" />
+    <Compile Include="src\IQuackable.cs" />
     <Compile Include="src\Program.cs" />
+    <Compile Include="src\DuckSimulator.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
