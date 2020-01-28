@@ -314,7 +314,83 @@ Counting Duck Factory:
     }
 ```
 
+### 15. Observable
 
+```
+    public class Observable : IQuackObservable
+    {
+        private ArrayList m_observers;
+        private IQuackObservable m_duck;
 
+        public Observable(IQuackObservable duck)
+        {
+            m_observers = new ArrayList();
+            this.m_duck = duck;
+        }
+        public void registerObserver(IObserver observer)
+        {
+            m_observers.Add(observer);
+        }
+
+        public void notifyObservers()
+        {
+            IEnumerator iterator = m_observers.GetEnumerator();
+
+            while (iterator.MoveNext())
+            {
+                IObserver observer = (IObserver) iterator.Current;
+                observer.update(m_duck);
+
+            }
+        }
+    }
+```
+
+### 16. Modifications of Duck classes 
+
+```
+        public class MallardDuck : IQuackable
+        {
+            private Observable m_observable;
+    
+            public MallardDuck()
+            {
+                m_observable = new Observable(this);
+            }
+            public void Quack()
+            {
+                Console.WriteLine("MallardDuck::Quack");
+                notifyObservers();
+            }
+    
+            public void registerObserver(IObserver observer)
+            {
+                m_observable.registerObserver(observer);
+            }
+    
+            public void notifyObservers()
+            {
+                m_observable.notifyObservers();
+            }
+        }
+```
        
+### 17. Observer and Quackologist 
 
+```
+    public interface IObserver
+    {
+        void update(IQuackObservable duck);
+    }
+```
+and Quackologist (Observer)
+
+```
+    public class Quackologist : IObserver
+    {
+        public void update(IQuackObservable duck)
+        {
+            Console.WriteLine("Quacklogist: " + duck + " just quacked");
+        }
+    }
+```
