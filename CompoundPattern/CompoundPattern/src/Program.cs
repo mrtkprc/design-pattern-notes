@@ -1,4 +1,5 @@
 ﻿using System;
+using CompoundPattern.Factories;
 
 namespace CompoundPattern
 {
@@ -7,9 +8,11 @@ namespace CompoundPattern
         public static void Main(string[] args)
         {
             Console.WriteLine("Compound Pattern Section In Head First Design Pattern");
+            AbstractDuckFactory duckFactory = new CountingDuckFactory();
+                 
             DuckSimulator simulator = new DuckSimulator();
 
-            simulator.simulate();
+            simulator.simulate(duckFactory);
 
 
         }

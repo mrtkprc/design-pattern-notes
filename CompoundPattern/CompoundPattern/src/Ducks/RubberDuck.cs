@@ -8,5 +8,15 @@ namespace CompoundPattern.Ducks
         {
             Console.WriteLine("RubberDuck::Squeak");
         }
+
+        public void registerObserver(IObserver observer)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void notifyObservers()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

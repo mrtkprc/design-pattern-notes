@@ -45,9 +45,18 @@
     <Compile Include="src\Ducks\MallardDuck.cs" />
     <Compile Include="src\Ducks\RedheadDuck.cs" />
     <Compile Include="src\Ducks\RubberDuck.cs" />
+    <Compile Include="src\Factories\AbstractDuckFactory.cs" />
+    <Compile Include="src\Factories\CountingDuckFactory.cs" />
+    <Compile Include="src\Factories\DuckFactory.cs" />
+    <Compile Include="src\Flock.cs" />
+    <Compile Include="src\IObserver.cs" />
     <Compile Include="src\IQuackable.cs" />
+    <Compile Include="src\IQuackObservable.cs" />
+    <Compile Include="src\Observable.cs" />
     <Compile Include="src\Program.cs" />
     <Compile Include="src\DuckSimulator.cs" />
+    <Compile Include="src\QuackCounter.cs" />
+    <Compile Include="src\Quackologist.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

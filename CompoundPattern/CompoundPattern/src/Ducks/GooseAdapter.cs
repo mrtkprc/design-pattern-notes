@@ -13,5 +13,15 @@ namespace CompoundPattern.Ducks
         {
             m_goose.honk();
         }
+
+        public void registerObserver(IObserver observer)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public void notifyObservers()
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }
