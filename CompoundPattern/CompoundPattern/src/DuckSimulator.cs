@@ -37,14 +37,13 @@ namespace CompoundPattern
             
             Console.WriteLine("\n.......Duck simulator.......");
             
-            Console.WriteLine("\nDuck Simulator: Whole Flock Simulation: ");
-            simulate(flockOfDucks);
-            
             Console.WriteLine("\nDuck Simulator: Mallard Flock Simulation: ");
             simulate(flockOfMallards);
             
             Console.WriteLine("\nDuck Simulator: With Observer:");
             Quackologist quackologist = new Quackologist();
+            flockOfDucks.registerObserver(quackologist);
+            simulate(flockOfDucks);
             
             Console.WriteLine("\nThe ducks quacked: "+ QuackCounter.GetQuacks());
         }

@@ -3,11 +3,13 @@ namespace CompoundPattern
     public class QuackCounter : IQuackable
     {
         private IQuackable m_duck;
+        private Observable m_observable;
         private static int m_numberOfQuacks;
 
         public QuackCounter(IQuackable duck)
         {
             m_duck = duck;
+            m_observable = new Observable(this);
         }
 
         public void Quack()
@@ -23,12 +25,12 @@ namespace CompoundPattern
 
         public void registerObserver(IObserver observer)
         {
-            throw new System.NotImplementedException();
+            m_observable.registerObserver(observer);
         }
 
         public void notifyObservers()
         {
-            throw new System.NotImplementedException();
+            m_observable.notifyObservers();
         }
     }
 }

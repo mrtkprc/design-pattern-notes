@@ -6,10 +6,12 @@ namespace CompoundPattern
     public class Flock : IQuackable
     {
         private ArrayList m_quackers;
-
+        private Observable m_observable;
+        
         public Flock()
         {
             m_quackers = new ArrayList();
+            m_observable = new Observable(this);
         }
 
         public void add(IQuackable quacker)
@@ -31,12 +33,20 @@ namespace CompoundPattern
 
         public void registerObserver(IObserver observer)
         {
-            throw new System.NotImplementedException();
+            IEnumerator iterator = m_quackers.GetEnumerator();
+            
+            IQuackable quacker = null;
+            while (iterator.MoveNext())
+            {
+                quacker = (IQuackable)iterator.Current;
+                m_observable.registerObserver(observer);
+            }
+            
         }
 
         public void notifyObservers()
         {
-            throw new System.NotImplementedException();
+            m_observable.notifyObservers();
         }
     }
 }
