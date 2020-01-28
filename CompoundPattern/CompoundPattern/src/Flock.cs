@@ -39,7 +39,7 @@ namespace CompoundPattern
             while (iterator.MoveNext())
             {
                 quacker = (IQuackable)iterator.Current;
-                m_observable.registerObserver(observer);
+                quacker.registerObserver(observer);
             }
             
         }

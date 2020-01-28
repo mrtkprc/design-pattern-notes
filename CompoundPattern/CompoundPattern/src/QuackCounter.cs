@@ -9,13 +9,14 @@ namespace CompoundPattern
         public QuackCounter(IQuackable duck)
         {
             m_duck = duck;
-            m_observable = new Observable(this);
+            m_observable = new Observable(duck);
         }
 
         public void Quack()
         {
             m_duck.Quack();
             m_numberOfQuacks++;
+            notifyObservers();
         }
 
         public static int GetQuacks()
