@@ -6,7 +6,7 @@ Each step of the lesson is listed in this file step by step.
 ```   
     public interface IQuackable
     {
-        void Quackable(); 
+        void Quack(); 
     }
 
 ```
@@ -16,7 +16,7 @@ Each step of the lesson is listed in this file step by step.
 ```   
     public class MallardDuck : IQuackable
     {
-        public void Quackable()
+        public void Quack()
         {
             Console.WriteLine("MallardDuck::Quack");
         }
@@ -141,7 +141,7 @@ Let's create a decorator that gives the ducks some new behaviour (the behavior o
        IQuackable gooseDuck = new GooseAdapter(new Goose());
 ```
 
-### 10. Abstract Factory
+#### 10. Abstract Factory
 ```
     public abstract class AbstractDuckFactory
     {
@@ -205,7 +205,7 @@ Counting Duck Factory:
         }
     }
 ```
-### 11. Let's modify method simulate()
+#### 11. Let's modify method simulate()
 
 ```
         public void simulate(AbstractDuckFactory duckFactory)
@@ -228,7 +228,7 @@ Counting Duck Factory:
         }
 ```
 
-### 12. Let's create a flock of ducks.
+#### 12. Let's create a flock of ducks.
 
 ```
     public class Flock : IQuackable
@@ -259,7 +259,7 @@ Counting Duck Factory:
     }
 ```
 
-### 13. Composite Structure with Iterator Pattern
+#### 13. Composite Structure with Iterator Pattern
 
 ```
             public void simulate(AbstractDuckFactory duckFactory)
@@ -304,7 +304,7 @@ Counting Duck Factory:
     
 ```
 
-### 14. Observer Pattern
+#### 14. Observer Pattern
 
 ```
     public interface IQuackObservable
@@ -314,7 +314,7 @@ Counting Duck Factory:
     }
 ```
 
-### 15. Observable
+#### 15. Observable
 
 ```
     public class Observable : IQuackObservable
@@ -346,7 +346,7 @@ Counting Duck Factory:
     }
 ```
 
-### 16. Modifications of Duck classes 
+#### 16. Modifications of Duck classes 
 
 ```
         public class MallardDuck : IQuackable
@@ -375,7 +375,7 @@ Counting Duck Factory:
         }
 ```
        
-### 17. Observer and Quackologist 
+#### 17. Observer and Quackologist 
 
 ```
     public interface IObserver
